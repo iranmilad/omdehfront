@@ -3,13 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <link rel="manifest"  href="manifest.json"/>
+
+    <!-- ✅ Removed maximum-scale=1 — it harms accessibility and triggers Edge warning -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="manifest" href="manifest.json"/>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <meta name="theme-color" content="#000000">
+
+    <!-- ✅ apple-touch-icon required for PWA/homescreen on iOS (Edge Tools warning fix) -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <title>سایت فروشگاهی</title>
-  <script defer src="/static/js/lib-axios.ddb10c56.js"></script><script defer src="/static/js/lib-react.5aa5b979.js"></script><script defer src="/static/js/lib-router.e47ef968.js"></script><script defer src="/static/js/544.78910c6f.js"></script><script defer src="/static/js/index.9b0ce653.js"></script><link href="/static/css/544.863ccf4c.css" rel="stylesheet"><link href="/static/css/index.94a9f4cd.css" rel="stylesheet"></head>
+
+    <!-- Preload critical font weights so browser fetches BEFORE render -->
+    <link rel="preload" href="/fonts/iranyekanx/Farsinumerals/Webfonts/Woff2/IRANYekanXFaNum-Regular.woff2"  as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/iranyekanx/Farsinumerals/Webfonts/Woff2/IRANYekanXFaNum-Medium.woff2"   as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/iranyekanx/Farsinumerals/Webfonts/Woff2/IRANYekanXFaNum-Bold.woff2"     as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/iranyekanx/Farsinumerals/Webfonts/Woff2/IRANYekanXFaNum-DemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/iranyekanx/Farsinumerals/Webfonts/Woff2/IRANYekanXFaNum-Light.woff2"    as="font" type="font/woff2" crossorigin="anonymous">
+  <script defer src="./static/js/lib-react.82cbc41c.js"></script><script defer src="./static/js/lib-router.5c71895b.js"></script><script defer src="./static/js/lib-axios.0e498ec8.js"></script><script defer src="./static/js/591.a8ed2f87.js"></script><script defer src="./static/js/index.750e39c0.js"></script><link href="./static/css/591.95570bed.css" rel="stylesheet"><link href="./static/css/index.f1ea64d9.css" rel="stylesheet"></head>
   <body>
     <div id="root"></div>
+    <!-- Portal for auth/supplier modals so they always render above filters (z-index) -->
+    <div id="auth-modal-portal" style="position:fixed;inset:0;z-index:2147483647;pointer-events:none;"></div>
   </body>
 </html>
